@@ -1,0 +1,56 @@
+.container {
+  position: relative;
+}
+
+.card {
+  width: 40rem;
+  height: 20rem;
+
+  background-image: url("https://images.unsplash.com/photo-1505533542167-8c89838bb19e");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+
+  -webkit-filter: brightness(90%) contrast(90%) blur(2px) grayscale(10%);
+}
+
+.weather {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 40rem;
+  height: 20rem;
+
+  color: #fff;
+  padding: 2rem;
+}
+
+// ---------- HEADER ---------- //
+
+header {
+  margin-bottom: 5rem;
+}
+
+.header-city {
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+.icon {
+  margin-top: -10px;
+  margin-right: -15px;
+  width: 5rem;
+  height: 5rem;
+}
+
+.temp-main{
+  font-size: 24px;
+}
+
+.header_temperatures {
+  text-align: right;
+}

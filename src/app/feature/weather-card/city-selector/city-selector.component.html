@@ -1,0 +1,18 @@
+<form class="example-form" [formGroup]="currForm">
+    <mat-form-field>
+      <mat-label>Weather in your city</mat-label>
+      <input type="text"
+             placeholder="Kyiv"
+             matInput
+             formControlName="city"
+             [matAutocomplete]="autoComplete"
+             (input)="weather.getCities(cityInput.value)"
+             #cityInput
+      >
+      <mat-autocomplete #autoComplete="matAutocomplete">
+        <mat-option *ngFor="let city of weather.searchResult$ | async" [value]="city.name + ' ,' + city.country" (click)="weather.getWeather(city)">
+          {{city.name}}, {{city.country}} {{city.state ? ', ' + city.state : ''}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+</form>

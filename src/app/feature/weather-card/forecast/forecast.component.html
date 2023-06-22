@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="card"></div>
+  <div class="weather" *ngIf="weather.selectedCityWeather$ | async as city">
+    <header class="flex flex--space-between">
+      <div class="">
+        <p class="header-city">{{city.name }}</p>
+        <span class="temp-main">{{city.main.temp | number : '1.0-0'}}</span>
+        <span>°C</span>
+      </div>
+      <div class="flex">
+          <div class="header_temperatures">
+            <p class="margin-b-5">{{city.weather[0].main}}</p>
+            <div>
+              <span>↑ {{city.main.temp_max | number : '1.0-0'}}° </span>
+              <span> ↓ {{city.main.temp_min | number : '1.0-0'}}°</span>
+            </div>
+        </div>
+        <img [src]="'https://openweathermap.org/img/wn/' + city.weather[0].icon + '.png'" class="icon">
+      </div>
+    </header>
+
+    <main class="flex flex--space-between">
+      <div>
+        <p class="margin-b-5">Feels like <span class="fs--20">{{city.main.feels_like | number : '1.0-0'}}°</span></p>
+        <p class="fs--20">{{city.weather[0].description}}</p>
+      </div>
+      <div>
+        <p class="margin-b-10">🍃Wind: {{city.wind.speed| number : '1.0-1'}}m/s</p>
+        <p>💧Humidity: {{city.main.humidity}}%</p>
+      </div>
+    </main>
+  </div>
+</div>
