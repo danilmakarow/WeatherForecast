@@ -25,7 +25,7 @@ export class WeatherApiService {
     clearTimeout(this.searchTimeout);
 
     this.searchTimeout = setTimeout(() => {
-      this.http.get<City[]>(`http://api.openweathermap.org/geo/1.0/direct?q=${cityPrompt}&limit=5&appid=${this.api}`)
+      this.http.get<City[]>(`https://api.openweathermap.org/geo/1.0/direct?q=${cityPrompt}&limit=5&appid=${this.api}`)
         .subscribe(
           cities => this.searchResult$.next(cities)
         )},
